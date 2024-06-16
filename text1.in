@@ -1,0 +1,15 @@
+int inc()
+{
+  int i;
+  i = i + 1;
+}
+
+int main() {
+    if(a == 1)
+    if(b == 1) {
+        return 0;
+    } else {
+        return 1;
+    }
+    return 0;
+}

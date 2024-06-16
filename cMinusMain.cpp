@@ -18,25 +18,25 @@ void printNode(node *x, int level = 0)
     switch (x->type)
     {
     case nodeType::semantic:
-        printf(" (%d)\n", x->val.intVal);
+        printf(" (%d)\n", x->line);
         break;
     case nodeType::id:
-        printf("ID: %s\n", x->val.id->c_str());
+        printf(": %s\n", x->val.id->c_str());
         break;
     case nodeType::intType:
-        printf("TYPE: int\n");
+        printf(": int\n");
         break;
     case nodeType::floatType:
-        printf("TYPE: float\n");
+        printf(": float\n");
         break;
     case nodeType::intVal:
-        printf("INT: %d\n", x->val.intVal);
+        printf(": %d\n", x->val.intVal);
         break;
     case nodeType::floatVal:
-        printf("FLOAT: %f\n", x->val.floatVal);
+        printf(": %g\n", x->val.floatVal);
         break;
     case nodeType::other:
-        printf("What is this? %s\n", x->word);
+        puts("");
         break;
     default:
         break;
@@ -51,26 +51,29 @@ int main(int argc, char **argv)
 {
     const char *fileName;
     isSuccess = true;
+#ifdef C_MINUS_FILE_IO
+    freopen("text1.out", "w", stdout);
+#endif // C_MINUS_FILE_IO
+
     if (argc < 2)
     {
-        fileName = "/home/aldlss/code/homework/cMinus/text1.in";
-        puts("0");
-        // return 0;
+#ifdef C_MINUS_FILE_IO
+        fileName = "text1.in";
+#else
+        puts("Usage: ./cminus <filename>");
+        return 0;
+#endif // C_MINUS_FILE_IO
     }
     else
         fileName = argv[1];
     yyin = fopen(fileName, "r");
     if (!yyin)
         return 0;
-    // yyin = nullptr;
-    puts("start parse");
     yyparse();
     fclose(yyin);
-    puts("parse success");
 
     if (isSuccess)
         printNode(root);
-    puts("end");
 
     return 0;
 }

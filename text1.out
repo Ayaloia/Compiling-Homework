@@ -1,0 +1,93 @@
+Program (1)
+  ExtDefList (1)
+    ExtDef (1)
+      Specifier (1)
+        TYPE: int
+      FunDec (1)
+        ID: inc
+        LP
+        RP
+      CompSt (2)
+        LC
+        DefList (3)
+          Def (3)
+            Specifier (3)
+              TYPE: int
+            DecList (3)
+              Dec (3)
+                VarDec (3)
+                  ID: i
+            SEMI
+        StmtList (4)
+          Stmt (4)
+            Exp (4)
+              Exp (4)
+                ID: i
+              ASSIGNOP
+              Exp (4)
+                Exp (4)
+                  ID: i
+                PLUS
+                Exp (4)
+                  INT: 1
+            SEMI
+        RC
+    ExtDefList (7)
+      ExtDef (7)
+        Specifier (7)
+          TYPE: int
+        FunDec (7)
+          ID: main
+          LP
+          RP
+        CompSt (7)
+          LC
+          StmtList (8)
+            Stmt (8)
+              IF
+              LP
+              Exp (8)
+                Exp (8)
+                  ID: a
+                RELOP
+                Exp (8)
+                  INT: 1
+              RP
+              Stmt (9)
+                IF
+                LP
+                Exp (9)
+                  Exp (9)
+                    ID: b
+                  RELOP
+                  Exp (9)
+                    INT: 1
+                RP
+                Stmt (9)
+                  CompSt (9)
+                    LC
+                    StmtList (10)
+                      Stmt (10)
+                        RETURN
+                        Exp (10)
+                          INT: 0
+                        SEMI
+                    RC
+                ELSE
+                Stmt (11)
+                  CompSt (11)
+                    LC
+                    StmtList (12)
+                      Stmt (12)
+                        RETURN
+                        Exp (12)
+                          INT: 1
+                        SEMI
+                    RC
+            StmtList (14)
+              Stmt (14)
+                RETURN
+                Exp (14)
+                  INT: 0
+                SEMI
+          RC
