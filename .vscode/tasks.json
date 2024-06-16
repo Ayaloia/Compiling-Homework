@@ -12,7 +12,9 @@
                 "${fileDirname}/cMinus.tab.c",
                 "-o",
                 "${fileDirname}/cminus",
-                "-I${fileDirname}"
+                "-I${fileDirname}",
+                "--std",
+                "c++11"
             ],
             "options": {
                 "cwd": "${fileDirname}"

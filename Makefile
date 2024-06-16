@@ -1,5 +1,5 @@
 main: lex.yy.c cMinus.tab.c cMinusMain.cpp
-	g++ lex.yy.c cMinus.tab.c cMinusMain.cpp -I. -g -o cminus
+	g++ lex.yy.c cMinus.tab.c cMinusMain.cpp -I. -g -o cminus --std=c++11
 
 lex.yy.c: cMinus.l cMinus.tab.c
 	flex cMinus.l
